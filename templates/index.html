@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="background" id="background"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="title">Weather</h1>
+            <div class="toggle-unit">
+                <span class="unit-label">°C</span>
+                <label class="switch">
+                    <input type="checkbox" id="unitToggle" checked>
+                    <span class="slider"></span>
+                </label>
+                <span class="unit-label">°F</span>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="search-input" 
+                placeholder="Search for a city..."
+                autocomplete="off"
+            >
+            <div class="autocomplete-list" id="autocompleteList"></div>
+        </div>
+
+        <!-- Current Weather Card -->
+        <div class="weather-card current-weather">
+            <div class="location-info">
+                <div class="location-name">
+                    <span class="city-name" id="cityName">Loading...</span>
+                    <span class="city-country" id="cityCountry"></span>
+                </div>
+                <div class="weather-time" id="weatherTime"></div>
+            </div>
+
+            <div class="current-temp-section">
+                <div class="weather-icon-large" id="weatherIconLarge">🌡️</div>
+                <div class="temp-display">
+                    <span class="current-temp" id="currentTemp">--</span>
+                    <span class="temp-unit" id="tempUnit">°F</span>
+                </div>
+            </div>
+
+            <div class="weather-condition" id="weatherCondition">Loading...</div>
+
+            <div class="feels-like">
+                <span>Feels like</span>
+                <span id="feelsLike">--</span>
+                <span id="feelsLikeUnit">°F</span>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-item">
+                    <span class="detail-label">💧 Humidity</span>
+                    <span class="detail-value" id="humidity">--%</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">💨 Wind</span>
+                    <span class="detail-value" id="windSpeed">-- mph</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">☀️ UV Index</span>
+                    <span class="detail-value" id="uvIndex">--</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7-Day Forecast -->
+        <div class="forecast-section">
+            <h2 class="forecast-title">7-Day Forecast</h2>
+            <div class="forecast-grid" id="forecastGrid">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Powered by Open-Meteo • Data updates every 10 minutes</p>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
