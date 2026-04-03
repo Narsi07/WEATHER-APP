@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import requests
 from datetime import datetime
 import json
@@ -214,7 +214,7 @@ def search_cities():
 @app.route("/")
 def index():
     """Serve the main page"""
-    return app.send_static_file("index.html")
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
